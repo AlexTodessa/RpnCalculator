@@ -28,7 +28,7 @@ $options = [
     'div'  => [DivisionOperator::class,       'Division (with / sign)'],
 
     'pow'  => [PowOperator::class,            'Pow/Exponent (with ** sign)'],
-    'mod'  => [ModOperator::class,            'Integer Mod Devision (with % sign)'],
+    'mod'  => [ModOperator::class,            'Modulo (with % sign)'],
     'sin'  => [SinOperator::class,            'Sinus (with sin command)'],
     'cos'  => [CosOperator::class,            'Cosinus (with cos command)'],
 
