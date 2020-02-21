@@ -1,0 +1,16 @@
+{
+    "name": "alext/rpncalc",
+    "description": "RPN Calculator with switchable interface",
+    "type": "library",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {"RpnCalculator\\": "src/"}
+    },
+    "authors": [
+        {
+            "name": "Alexander Tumanovsky",
+            "email": "tumanovsky@gmail.com"
+        }
+    ]
+}
