@@ -16,3 +16,71 @@ $ cd RpnCalculator/bin
 $ php rpn-cli.php
 ```
 CLI version only uses basic operators (+, -, \*, /), for full demo please see the hosted version.
+
+## Examples of use ##
+
+```php
+$rpnCalculator = new RpnCalculator(
+    NumberOperand::class,
+    AdditionOperator::class,
+    SubstractionOperator::class,
+    MultiplicationOperator::class,
+    DivisionOperator::class
+);
+```
+
+The following example would create an instance of RpnCalculator, with support of numbers, Addition, Substraction, Multiplication and Division.
+
+Simple usage example:
+```php
+echo $rpnCalculator->process('1 1 +'); //returns 2
+```
+
+Statefull usage example:
+```php
+echo $rpnCalculator->process('1'); //returns 1
+echo $rpnCalculator->process('1'); //returns 1
+echo $rpnCalculator->process('+'); //returns 2
+```
+
+Mixed usage example
+```php
+echo $rpnCalculator->process('1 1'); //returns 1
+echo $rpnCalculator->process('+');   //returns 2
+echo $rpnCalculator->process('2 -'); //returns 0
+```
+
+## Supported Operations ##
+
+### Default ###
+* Numbers
+* Addition (with + sign)
+* Substraction (with - sign)
+* Multiplication (with * sign)
+* Division (with / sign)
+
+### Extra ###
+* Pow/Exponent (with ** sign)
+* Modulo (with % sign)
+* Sinus (with sin command)
+* Cosinus (with cos command)
+
+## Additional planned features ##
+Variables with $ prefix as operands, = sign as assigning operator.
+
+# Extending the RPN Calculator #
+If you want to extend the number of operators and/or operands types - make sure you implement the following interfaces with your newly
+added classes:
+
+## For Operators ##
+* MemberInterface
+* ItemInterface
+* EvaluateInterface
+
+## For Operands ##
+* MemberInterface
+* ItemInterface
+* OutputInterface
+* OperandInterface
+
+Have Fun :)
