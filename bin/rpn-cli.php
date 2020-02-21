@@ -1,10 +1,7 @@
 <?php
 use RpnCalculator\RpnCalculator;
 use RpnCalculator\Operands\NumberOperand;
-use RpnCalculator\Operators\AdditionOperator;
-use RpnCalculator\Operators\SubstractionOperator;
-use RpnCalculator\Operators\MultiplicationOperator;
-use RpnCalculator\Operators\DivisionOperator;
+use RpnCalculator\Operators\{AdditionOperator, SubstractionOperator, MultiplicationOperator, DivisionOperator};
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -13,7 +10,7 @@ require __DIR__ . '/../vendor/autoload.php';
  * return result string (in most cases - a tail number of the sequence).
  * @var \RpnCalculator\RpnCalculator $RpnCalculator
  */
-$RpnCalculator = new RpnCalculator(
+$rpnCalculator = new RpnCalculator(
     NumberOperand::class,
     AdditionOperator::class,
     SubstractionOperator::class,
@@ -48,15 +45,15 @@ while (true) {
         case 'q':
             break 2;
         case 'r':
-            $RpnCalculator->reset();
+            $rpnCalculator->reset();
             $output = 'Sequence reset.';
             break;
         case 'd':
-            $output = $RpnCalculator->dump() ?: null;
+            $output = $rpnCalculator->dump() ?: null;
             break;
         default:
             try {
-                $output = $RpnCalculator->process($input);
+                $output = $rpnCalculator->process($input);
             } catch (\RpnCalculator\Exceptions\UnexpectedItemException $e) {
                 $output = 'ERROR! Unexpected Item :' . $e->getMessage();
             } catch (\RpnCalculator\Exceptions\EvaluateException $e) {

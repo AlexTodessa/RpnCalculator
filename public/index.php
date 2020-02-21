@@ -35,7 +35,7 @@ $options = [
 ];
 
 
-if (empty($_SESSION['instance']) && !isset($_POST)) {
+if (empty($_SESSION['instance']) && empty($_POST)) {
     echo '<h2>Please, compose your calculator instance</h2>';
     echo '<form method="post">';
     $inputs = [];
@@ -66,19 +66,24 @@ if (isset($_SESSION['instance'])) {
         $rpnCalc->reset();
     }
 
-    echo 'Current Sequence: ' . $rpnCalc->dump() . '</br>';
+    echo 'Current Sequence: ' . $rpnCalc->dump();
 
     if (!empty($_POST) && array_key_exists('input', $_POST)) {
-        echo 'Current input:    ' . htmlspecialchars($_POST['input']) . '<br/>';
+        echo ' [' . htmlspecialchars($_POST['input']) . '] <br/>';
+
         try {
             echo 'Output:           ' . $rpnCalc->process($_POST['input']) . '<br/>';
+            echo 'New Sequence:     ' . $rpnCalc->dump() . '</br>';
         } catch (\RpnCalculator\Exceptions\UnexpectedItemException $e) {
             echo 'ERROR! Unexpected Item :' . $e->getMessage() . '<br/>';
         } catch (\RpnCalculator\Exceptions\EvaluateException $e) {
             echo 'ERROR! Evaluation failed. Sequence destroyed. ' . $e->getMessage() . '<br/>';
-        }}
+        }
+    } else {
+        echo '<br>';
+    }
 
-    echo 'New Sequence:     ' . $rpnCalc->dump() . '</br>';
+
 
     echo '</pre>';
 
