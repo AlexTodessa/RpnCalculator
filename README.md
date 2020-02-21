@@ -10,9 +10,9 @@ result of calculation.
 Hosted Application: http://rpncalc.developer.od.ua/
 
 ## Running CLI Version ##
-
+```
 $ git checkout git@github.com:AlexTodessa/RpnCalculator.git
 $ cd RpnCalculator/bin
 $ php rpn-cli.php
-
+```
 CLI version only uses basic operators (+, -, \*, /), for full demo please see the hosted version.
