@@ -34,7 +34,8 @@ EOF;
  */
 while (true) {
     $output = null;
-    $input = readline('> ');
+    $prompt = $rpnCalculator->dump();
+    $input = readline($prompt ? $prompt . ' > ': '> ');
     readline_add_history($input);
     if ($input === false) {
         echo chr(10);
