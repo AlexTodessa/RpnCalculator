@@ -10,6 +10,11 @@ use RpnCalculator\Interfaces\EvaluateInterface;
 use RpnCalculator\Exceptions\EvaluateException;
 use RpnCalculator\Operands\NumberOperand;
 
+/**
+ * Operator of division, will put the result into left operand.
+ * Major difference between other operands - cannot divide by zero. This would produce Evaluate Exception.
+ * @author Alexander AlexT Tumanovsky
+ */
 class DivisionOperator implements MemberInterface, ItemInterface, EvaluateInterface
 {
     use ItemTrait;

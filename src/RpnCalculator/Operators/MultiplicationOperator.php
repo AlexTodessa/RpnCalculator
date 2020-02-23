@@ -9,6 +9,10 @@ use RpnCalculator\Interfaces\ListItemInterface;
 use RpnCalculator\Interfaces\EvaluateInterface;
 use RpnCalculator\Operands\NumberOperand;
 
+/**
+ * Operator of Multiplication. Will put the result into left operand.
+ * @author Alexander AlexT Tumanovsky
+ */
 class MultiplicationOperator implements MemberInterface, ItemInterface, EvaluateInterface
 {
     use ItemTrait;
