@@ -9,6 +9,10 @@ use RpnCalculator\Interfaces\ListItemInterface;
 use RpnCalculator\Traits\LeftAndRightOperandsTrait;
 use RpnCalculator\Operands\NumberOperand;
 
+/**
+ * Operator, that can add two numbers and put the result back into left operand numeric.
+ * @author Alexander AlexT Tumanovsky
+ */
 class AdditionOperator implements MemberInterface, ItemInterface, EvaluateInterface
 {
     use ItemTrait;

@@ -12,6 +12,11 @@ use RpnCalculator\Operators\Extra\CosOperator;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+/**
+ * A quick and very sketchy way to show, that this calculator uses composite approach.
+ * Quality wasn't a key goal here, just another interface to the same functionality.
+ */
+
 session_start();
 if (!empty($_POST['action']) && $_POST['action'] == 'restart') {
     unset($_SESSION['instance'], $_POST);

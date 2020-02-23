@@ -9,6 +9,11 @@ use RpnCalculator\Interfaces\EvaluateInterface;
 use RpnCalculator\Operands\NumberOperand;
 use RpnCalculator\Traits\OneOperandTrait;
 
+/**
+ * Cosinus Operator.
+ * Difference from other operators, that it operates with only 1 operand.
+ * @author Alexander AlexT Tumanovsky
+ */
 class CosOperator implements MemberInterface, ItemInterface, EvaluateInterface
 {
     use ItemTrait;

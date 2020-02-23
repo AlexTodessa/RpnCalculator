@@ -1,6 +1,11 @@
 <?php
 namespace RpnCalculator\Traits;
 
+/**
+ * Item Trait to allow members to hold an item.
+ * Done to avoid copy-paste.
+ * @author Alexander AlexT Tumanovsky
+ */
 trait ItemTrait
 {
     protected $item;

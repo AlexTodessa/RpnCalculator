@@ -3,9 +3,21 @@ namespace RpnCalculator\Traits;
 
 use RpnCalculator\Exceptions\EvaluateException;
 use RpnCalculator\Interfaces\OperandInterface;
+use RpnCalculator\RpnItem;
 
+/**
+ * Trait, that allowes to get Left and Right operands from the sequence, as that's the most common used scenario.
+ * Validates them to be operands.
+ * @author Alexander AlexT Tumanovsky
+ */
 trait LeftAndRightOperandsTrait
 {
+    /**
+     *
+     * @param RpnItem $item
+     * @throws EvaluateException
+     * @return array RpnItem[]
+     */
     public function getLeftAndRightOperands($item)
     {
         $rightOperandListItem = $item->getPrev();

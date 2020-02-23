@@ -10,6 +10,10 @@ use RpnCalculator\Interfaces\EvaluateInterface;
 use RpnCalculator\Operands\NumberOperand;
 use RpnCalculator\Exceptions\EvaluateException;
 
+/**
+ * Modulo Operator.
+ * @author Alexander AlexT Tumanovsky
+ */
 class ModOperator implements MemberInterface, ItemInterface, EvaluateInterface
 {
     use ItemTrait;

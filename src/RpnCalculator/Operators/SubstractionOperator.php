@@ -9,6 +9,10 @@ use RpnCalculator\Interfaces\ListItemInterface;
 use RpnCalculator\Interfaces\EvaluateInterface;
 use RpnCalculator\Operands\NumberOperand;
 
+/**
+ * Operator of Substraction. Will put the result into left operand.
+ * @author Alexander AlexT Tumanovsky
+ */
 class SubstractionOperator implements MemberInterface, ItemInterface, EvaluateInterface
 {
 

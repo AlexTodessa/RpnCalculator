@@ -9,6 +9,10 @@ use RpnCalculator\Interfaces\ListItemInterface;
 use RpnCalculator\Interfaces\EvaluateInterface;
 use RpnCalculator\Operands\NumberOperand;
 
+/**
+ * Pow Operator.
+ * @author Alexander AlexT Tumanovsky
+ */
 class PowOperator implements MemberInterface, ItemInterface, EvaluateInterface
 {
     use ItemTrait;

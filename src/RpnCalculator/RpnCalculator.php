@@ -9,6 +9,11 @@ use RpnCalculator\Interfaces\EvaluateInterface;
 use RpnCalculator\Interfaces\ListItemInterface;
 use RpnCalculator\Exceptions\UnexpectedItemException;
 use RpnCalculator\Exceptions\EvaluateException;
+use RpnCalculator\Operands\NumberOperand;
+use RpnCalculator\Operators\AdditionOperator;
+use RpnCalculator\Operators\SubstractionOperator;
+use RpnCalculator\Operators\MultiplicationOperator;
+use RpnCalculator\Operators\DivisionOperator;
 
 /**
  * RpnCalculator class
@@ -129,9 +134,9 @@ class RpnCalculator
     }
 
     /**
-     *
+     * Represent stored sequence as string
      */
-    public function dump()
+    public function dump() : string
     {
         $seq = [];
         if ($this->head) {
@@ -141,5 +146,20 @@ class RpnCalculator
             } while ($head = $head->getNext());
         }
         return $seq ? implode(' ', $seq) : '';
+    }
+
+    /**
+     * A quick way to instantiate PrnCalculator with default set of members
+     * @param array $additionalMembers
+     */
+    public static function factory(?array $additionalMembers = null)
+    {
+        return new RpnCalculator(
+            NumberOperand::class,
+            AdditionOperator::class,
+            SubstractionOperator::class,
+            MultiplicationOperator::class,
+            DivisionOperator::class
+        );
     }
 }
