@@ -84,3 +84,9 @@ added classes:
 * OperandInterface
 
 Have Fun :)
+
+# To Do, Plans for future #
+* Add a required number of operands to precceed an operator so an error can be discovered before validation, without sequence loss
+* Add support of Variable Operand and Assign Operator for more complex examples solving
+* Add support of sequences branching, an analog of standard calculator's Memory feature
+* Add ability to calculate percentages (conflicts with modulo symbol)
